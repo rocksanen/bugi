@@ -189,7 +189,7 @@ ul {
     margin-bottom: 10px; /* Spacing between items */
     font-weight: bold; /* Bold text for better clarity */
     border-radius: 4px; /* Rounded corners for a modern look */
-    max-width: 60px; /* Limit the width of each item */
+    max-width: 100px; /* Limit the width of each item */
     text-align: center; /* Center the text */
 }
 

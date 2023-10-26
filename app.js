@@ -12,6 +12,15 @@ function hasPlayerFaced(player1, player2) {
     return player1.opponents.includes(player2.id);
 }
 
+// Function to fetch decks that are currently in matchups
+function getDecksInMatch() {
+    let decksInMatch = [];
+    matchups.forEach(match => {
+        decksInMatch.push(match.deck1, match.deck2);
+    });
+    return decksInMatch;
+}
+
 // Populate Select with Options
 function populateSelect(selectId, options) {
     const select = document.getElementById(selectId);
@@ -36,13 +45,15 @@ function getPlayerOptions(excludeId, excludeOpponentsOf = null) {
 }
 
 function getDeckOptions(excludeDeck, playerUsedDecks) {
+    let decksInMatch = getDecksInMatch();  // Fetch all decks currently in matchups
+
     return decks
         .map(deck => ({
             value: deck.name,
             label: deck.name,
             disabled: playerUsedDecks.includes(deck.name) ||
                       deck.name === excludeDeck ||
-                      isDeckInMatch(deck.name) ||
+                      decksInMatch.includes(deck.name) ||  // Check if the deck is in a match
                       hasDecksMatched(excludeDeck, deck.name)
         }));
 }
@@ -321,6 +332,8 @@ function resolveMatch(outcome) {
     displayDeckMatchups();
     displayPlayerScores();
 }
+
+
 
 
 
