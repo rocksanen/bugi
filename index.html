@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game Matchup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="add-player-container">
+            <h2>Add Player</h2>
+            <input type="text" id="playerName" placeholder="Player Name">
+            <input type="text" id="playerDeck" placeholder="Deck Name (e.g. d1, d2)">
+            <button onclick="addPlayer()">Add</button>
+        </div>
+    
+        <div class="players-container">
+            <h2>Players</h2>
+            <ul id="playerList"></ul>
+        </div>
+    
+        <div class="deck-scores-container">
+            <h2>Deck Scores</h2>
+            <ul id="deckScoreList"></ul>
+        </div>
+
+        <div class="player-scores-container">
+            <h2>Player Scores</h2>
+            <ul id="playerScoreList"></ul>
+        </div>
+        
+    </div>
+    
+
+    <div class="matchup-container add-player-container">
+        <h2>Matchups</h2>
+        <div class="matchup-section"> 
+            <div class="matchup-group">
+                Player 1: <select id="player1Select" onchange="updateDeck1Options()"></select>
+                Deck 1: <select id="deck1Select" onchange="updatePlayer2Options()"></select>
+            </div>
+            <div class="matchup-group">
+                Player 2: <select id="player2Select" onchange="updateDeck2Options()"></select>
+                Deck 2: <select id="deck2Select"></select>
+            </div>
+            <button onclick="createMatchup()">Create Matchup</button>
+        </div>
+        <ul id="matchupList" class="matchup-list"></ul> <!-- Added class "matchup-list" for styling -->
+    </div>
+
+        <!-- Add this section where you want the list to be displayed -->
+        <div class="deck-matchups-container">
+            <h2>Deck Matchups</h2>
+            <ul id="deckMatchupList"></ul>
+        </div>
+
+    <div id="endMatchModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <p>Select the winner:</p>
+            <button id="deck1WinBtn" onclick="resolveMatch('deck1')">Deck 1</button>
+            <button id="deck2WinBtn" onclick="resolveMatch('deck2')">Deck 2</button>
+            <button onclick="resolveMatch('draw')">Draw</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+

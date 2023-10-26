@@ -1,0 +1,204 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 20px;
+    background-color: #e6e9ed;
+    color: #333;
+}
+
+h2 {
+    border-bottom: 2px solid #7a869a;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+button, input, select {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #357ab7;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.grid-container {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Four equal columns */
+    gap: 20px;
+}
+
+.add-player-container, .players-container, .deck-scores-container, .matchups-container { 
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.players-container li, .deck-scores-container li {
+    border: 1px solid #cfd8dc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f5f7f9;
+}
+
+.matchup-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #cfd8dc;
+    background-color: #f5f7f9;
+}
+
+.matchup-section .matchup-group:last-child {
+    margin-right: 0;
+}
+
+.matchup-section button {
+    flex-shrink: 0;  /* Prevents the button from shrinking in flex container */
+    padding: 5px 15px; /* Adjusts the button's padding to better fit in the matchup section */
+    margin: 0;  /* Removes the margin to align the button vertically with other items */
+}
+
+.matchup-container {
+    margin-top: 20px;
+}
+
+.matchup-group {
+    flex: 1; /* Allows the groups to take equal width */
+    border: 1px solid #cfd8dc;
+    padding: 10px;
+    margin-right: 10px; /* Add spacing between the groups */
+    background-color: #e6e9ed; /* Optional: to give a different background color for more separation */
+}
+
+#matchupList li {
+    margin-bottom: 15px; /* Adjust based on your needs */
+    font-size: 16px; /* Adjust based on your needs */
+    /* Add any additional styles that fit your design */
+}
+
+/* General Styling for Matchups */
+.matchup-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 4px 0;
+    background-color: #f7f7f7; /* Added subtle background color */
+}
+
+.matchup-list span {
+    font-family: 'Roboto', sans-serif; /* Ensure font family consistency */
+    margin-right: 10px; /* Spacing between the text and the End Match button */
+}
+
+/* Tooltip for the match representation */
+.matchup-list span:hover::after {
+    content: "This represents Player (Deck) vs Player (Deck)."; /* Example tooltip content */
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    top: 0;
+    right: 0;
+    white-space: nowrap;
+    z-index: 1000; /* Ensure tooltip appears above all other elements */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    width: 100%;
+    max-width: 150px;
+    display: inline-block;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.disabled {
+    color: red;
+}
+
+.player-scores-container {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.player-scores-container li {
+    border: 1px solid #cfd8dc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f5f7f9;
+}
+
+/* Styling for Deck Matchups */
+.deck-matchups-container ul {
+    padding-left: 20px; /* Add some left padding for better alignment */
+}
+
+.deck-matchups-container li {
+    background-color: #f5f7f9; /* Light background for each item */
+    border: 1px solid #cfd8dc; /* Border around each item */
+    padding: 10px; /* Padding inside each item */
+    margin-bottom: 10px; /* Spacing between items */
+    font-weight: bold; /* Bold text for better clarity */
+    border-radius: 4px; /* Rounded corners for a modern look */
+    max-width: 60px; /* Limit the width of each item */
+    text-align: center; /* Center the text */
+}
+
+
+
+
+
+
+
+
+
+
